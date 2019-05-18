@@ -16,10 +16,10 @@ namespace Service.Core
 {
     public static class CoreConfiguration
     {
-        public static IServiceCollection AddLmsAuthentication(this IServiceCollection services, IConfigurationSection configuration)
+        public static IServiceCollection AddAuthentication(this IServiceCollection services, IConfigurationSection configuration)
         {
             // Allow cross site communication
-            services.AddCors(o => o.AddPolicy("LMSCorsPolicy",
+            services.AddCors(o => o.AddPolicy("DinnerCorsPolicy",
                                               builder =>
                                                   builder
                                                       .SetIsOriginAllowed(host => true)
@@ -76,9 +76,6 @@ namespace Service.Core
         {
             services.AddScoped(typeof(IUserContext), typeof(HttpUserContext));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddTransient(typeof(IUnitOfWorkFactory), serviceProvider =>
-                                      new UnitOfWorkFactory<T>(serviceProvider.GetService<T>, serviceProvider.GetService<IUserContext>()));
-
             return services;
         }
     }

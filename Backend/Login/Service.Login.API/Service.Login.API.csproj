@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <DockerTargetOS>Windows</DockerTargetOS>
+    <UserSecretsId>ac7b9e8b-e3aa-4809-a009-5dd19c1b161f</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Service.Core\Service.Core.csproj" />
+    <ProjectReference Include="..\Service.Login.BAL\Service.Login.BAL.csproj" />
   </ItemGroup>
 
 </Project>
