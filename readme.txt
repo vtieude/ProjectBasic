@@ -17,3 +17,11 @@ Microsoft.EntityFrameworkCore.SqlServer -OutputDir DAL/Models -Force -Context Fi
         public string SysChgLogin { get; set; }
         public string SysChgType { get; set; }
         public int? SysChgCnt { get; set; }
+
+---------------Fronend----------------------
+- Angular 7
+- If Angular 7 isn’t installed then run the following command:
+
+npm i -g @angular/cli@latest
+- Remember run npm install in the first time clone project
+- Run frontend side " npm start"
